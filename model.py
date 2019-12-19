@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-%matplotlib inline
+##%matplotlib inline
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import pickle
@@ -24,10 +24,10 @@ y = df['gdpPerCapita']
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size= 0.3,random_state=101)
 
-##print("Check One")
+#print("Check One")
 from sklearn.linear_model import LinearRegression
 
-##print("2")
+#print("2")
 
 #fit simple linear regression to training set
 lm = LinearRegression()
@@ -44,3 +44,7 @@ pickle.dump(lm, open('model.pkl','wb'))
 #loading model to compare results
 model = pickle.load(open('model.pkl','rb'))
 print(model.predict([[75]]))
+print(lm.coef_)
+plt.scatter(X_test, y_test, color ='gray')
+plt.plot(X_test,predictions, color='red')
+plt.show()
