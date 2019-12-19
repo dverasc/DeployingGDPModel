@@ -43,4 +43,4 @@ pickle.dump(lm, open('model.pkl','wb'))
 
 #loading model to compare results
 model = pickle.load(open('model.pkl','rb'))
-print(model.predict([[1.8]]))
+print(model.predict([[75]]))
